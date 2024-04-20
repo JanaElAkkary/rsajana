@@ -12,12 +12,14 @@ def is_prime(number):
     return True
 
 def generate_prime(bit_length):
+    # This function generates a random prime number of specified bit length.
     while True:
         prime = random.getrandbits(bit_length)
         if is_prime(prime):
             return prime
 
 def extended_gcd(a, b):
+    
     x0, x1, y0, y1 = 1, 0, 0, 1
     while b:
         q, a, b = a // b, b, a % b
