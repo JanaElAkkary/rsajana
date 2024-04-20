@@ -4,7 +4,7 @@ import math
 import time
 from generatingnumbers import is_prime, generate_prime, extended_gcd, generate_keys
 
-def factorize(n, e):
+def factorize(n, e):   
     start_time = time.perf_counter()  
     factors = []
     while n % 2 == 0:
@@ -23,7 +23,17 @@ def factorize(n, e):
     d = extended_gcd(e, euler_phi)[1] % euler_phi
 
     return factors, d, runtime
-
+#   """
+#     Factorize the modulus n and compute the private exponent d.
+    
+#     Parameters:
+#     n (int): The modulus
+#     e (int): The public exponent
+    
+#     Returns:
+#     tuple: A tuple containing the prime factors of n, 
+#            the private exponent d, and the runtime in milliseconds
+#     """
 def main():
     n = int(input("\nEnter the composite number (n) to factorize: "))
     e = int(input("Enter the public exponent (e): "))
@@ -33,6 +43,9 @@ def main():
     print(f"\nThe factors of {n} are: {factors}")
     print(f"Calculated private exponent d: {d}")
     print(f"Runtime: {runtime:.4f} milliseconds")
+        
+    # Main function to factorize a composite number and compute the private exponent d.
+    
 
 if __name__ == "__main__":
     main()

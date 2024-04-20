@@ -10,6 +10,15 @@ def is_prime(number):
         if number % i == 0:
             return False
     return True
+#    """
+#     Check if a number is prime.
+    
+#     Parameters:
+#     number (int): The number to check
+    
+#     Returns:
+#     bool: True if the number is prime, False otherwise
+#     """
 
 def generate_prime(bit_length):
     # This function generates a random prime number of specified bit length.
@@ -17,20 +26,50 @@ def generate_prime(bit_length):
         prime = random.getrandbits(bit_length)
         if is_prime(prime):
             return prime
-
-def extended_gcd(a, b):
+#   """
+#     Generate a random prime number of a specified bit length.
     
+#     Parameters:
+#     bit_length (int): The desired bit length of the prime number
+    
+#     Returns:
+#     int: A random prime number with the specified bit length
+#     """
+def extended_gcd(a, b):
+
     x0, x1, y0, y1 = 1, 0, 0, 1
     while b:
         q, a, b = a // b, b, a % b
-        x0, x1 = x1, x0-q*x1
+        x0, x1 = x1, x0-q*x1 
         y0, y1 = y1, y0 - q * y1
     return a, x0, y0
+#  """
+#     Compute the extended greatest common divisor (GCD) of two integers a and b.
+#     Additionally, compute the coefficients x and y such that ax + by = gcd(a, b).
+    
+#     Parameters:
+#     a (int): The first integer
+#     b (int): The second integer
+    
+#     Returns:
+#     tuple: A tuple containing the GCD of a and b, and the coefficients x and y
+#     """
 
 def generate_keys(bit_length):
     p = generate_prime(bit_length)
     q = generate_prime(bit_length)
-
+#    """
+#     Generate RSA public and private keys.
+    
+#     Parameters:
+#     bit_length (int): The desired bit length for the prime numbers
+    
+#     Returns:
+#     tuple: A tuple containing the prime numbers p and q, 
+#            public and private exponents e and d,
+#            Euler's totient phi, modulus n,
+#            and the public and private keys (e, n) and (d, n)
+#      """
     while p == q:
         q = generate_prime(bit_length)
 
