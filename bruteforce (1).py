@@ -2,17 +2,51 @@ import time
 from generatingnumbers import is_prime, generate_prime, extended_gcd, generate_keys
 
 def encrypt(message, e, n):
+    #    """
+    # Encrypt a message using RSA encryption.
+    
+    # Parameters:
+    # message (str): The message to encrypt
+    # e (int): The public exponent
+    # n (int): The modulus
+    
+    # Returns:
+    # list: List of encrypted integers representing the message
+    # """
     return [pow(ord(char), e, n) for char in message]
 
 def decrypt(encrypted_message, d, n):
+    #   """
+    # Decrypt a message using RSA decryption.
+    
+    # Parameters:
+    # encrypted_message (list): List of encrypted integers
+    # d (int): The private exponent
+    # n (int): The modulus
+    
+    # Returns:
+    # str: Decrypted message
+    # """
     return ''.join([chr(pow(char, d, n) % 65536) for char in encrypted_message])
 
 def brute_force(encrypted_message, e, n):
+    #   """
+    # Perform brute-force attack to find the private exponent d.
+    
+    # Parameters:
+    # encrypted_message (list): List of encrypted integers
+    # e (int): The public exponent
+    # n (int): The modulus
+    
+    # Returns:
+    # tuple: A tuple containing the found private exponent d and the runtime in milliseconds
+    
     start_time = time.perf_counter() 
     d = 2  # Start with the smallest possible prime exponent
+    
     decrypted = False
     while not decrypted:
-        if pow(e, d, n) == 1:  # Check if e*d is congruent to 1 modulo phi(n)
+        if pow(e, d, n) == 1:  # Check if end is congruent to 1 modulos phi(n)
             decrypted = True
         else:
             d += 1
