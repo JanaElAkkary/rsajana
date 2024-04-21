@@ -19,7 +19,6 @@ def brute_force(encrypted_message, e, n, phi):
     end_time = time.perf_counter()  
     runtime = (end_time - start_time) * 1000  
     return d, runtime, attempts
-
 def main():
     message = int(input("Enter the message to encrypt: "))
     p = int(input("Enter the prime number (p): "))
