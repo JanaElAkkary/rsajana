@@ -35,20 +35,23 @@ def factorize(n, e):
 #            the private exponent d, and the runtime in milliseconds
 #     """
 def main():
-    n = int(input("\nEnter the composite number (n) to factorize: "))
+    p = int(input("Enter the prime number (p): "))
+    q = int(input("Enter the prime number (q): "))
     e = int(input("Enter the public exponent (e): "))
 
-    factors, d, runtime = factorize(n, e)
+    factors, d, runtime = factorize(p, q, e)
 
-    print(f"\nThe factors of {n} are: {factors}")
+    print(f"\nThe factors of {p*q} are: {factors}")
     print(f"Calculated private exponent d: {d}")
     print(f"Runtime: {runtime:.4f} milliseconds")
+
         
     # Main function to factorize a composite number and compute the private exponent d.
     
 
 if __name__ == "__main__":
     main()
+
 
 
 
