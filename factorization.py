@@ -38,8 +38,9 @@ def main():
     p = int(input("Enter the prime number (p): "))
     q = int(input("Enter the prime number (q): "))
     e = int(input("Enter the public exponent (e): "))
+    n=p*q
 
-    factors, d, runtime = factorize(p, q, e)
+    factors, d, runtime = factorize(n, e)
 
     print(f"\nThe factors of {p*q} are: {factors}")
     print(f"Calculated private exponent d: {d}")
