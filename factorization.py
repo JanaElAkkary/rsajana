@@ -42,7 +42,7 @@ def main():
 
     factors, d, runtime = factorize(n, e)
 
-    print(f"\nThe factors of {p*q} are: {factors}")
+    print(f"\nThe factors of {n} are: {factors}")
     print(f"Calculated private exponent d: {d}")
     print(f"Runtime: {runtime:.4f} milliseconds")
 
