@@ -38,10 +38,17 @@ def main():
     p = int(input("Enter the prime number (p): "))
     q = int(input("Enter the prime number (q): "))
     e = int(input("Enter the public exponent (e): "))
+    message = int(input("Enter the message to encrypt: "))
+
     n=p*q
-
     factors, d, runtime = factorize(n, e)
-
+    public=(n,e)
+    private=(n,d)
+    print("the public key is: ", public,"private is: ",private)
+    encryption=pow(message, e, n)
+    decryption=pow(encryption, d, n)
+    print("encryption: ", encryption)
+    print("decryption: ", decryption)
     print(f"\nThe factors of {n} are: {factors}")
     print(f"Calculated private exponent d: {d}")
     print(f"Runtime: {runtime:.4f} milliseconds")
