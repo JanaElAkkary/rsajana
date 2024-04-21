@@ -26,7 +26,7 @@ def main():
     q = int(input("Enter the prime number (q): "))
     e = int(input("Enter the public exponent (e): "))
     n = p * q
-    phi = euler_phi(n)
+    phi =(q-1)*(p-1)
     encrypted_message =pow(message, e, n)
     d, runtime, attempts = brute_force(encrypted_message, e, n, phi)
     decrypted_message=pow(encrypted_message, d, n)
