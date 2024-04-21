@@ -2,7 +2,7 @@
 
 import random
 import math 
-#importing all necessary imports
+#importing all necessary modules 'random' and 'math'
 def is_prime(number):
     if number < 2:
         return False
@@ -29,7 +29,7 @@ def generate_prime(bit_length):
 #   """
 #     Generate a random prime number of a specified bit length.
     
-#     Parameters:
+#     Parameters:p
 #     bit_length (int): The desired bit length of the prime number
     
 #     Returns:

@@ -2,7 +2,7 @@
 
 import math
 import time
-from generatingnumbers import is_prime, generate_prime, extended_gcd, generate_keys
+from generatingnumbers import is_prime, generate_prime, extended_gcd, generate_keys ,euler_phi
 
 def factorize(n, e):   
     start_time = time.perf_counter()  

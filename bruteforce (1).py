@@ -1,5 +1,5 @@
 import time
-from generatingnumbers import is_prime, generate_prime, extended_gcd, generate_keys
+from generatingnumbers import is_prime, generate_prime, extended_gcd, generate_keys, euler_phi
 
 def encrypt(message, e, n):
     #    """
@@ -46,7 +46,7 @@ def brute_force(encrypted_message, e, n):
     
     decrypted = False
     while not decrypted:
-        if pow(e, d, n) == 1:  # Check if end is congruent to 1 modulos phi(n)
+        if (e*d)% euler_phi == 1:  # Check if end is congruent to 1 modulos phi(n)
             decrypted = True
         else:
             d += 1
